@@ -64,7 +64,7 @@ require ('php/sesionesbomberos.php');
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link " href="avisos.php">Avisos</a>
+                    <a class="nav-link " href="listadoaviso.php">Avisos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="listadoproducto.php">Productos</a>

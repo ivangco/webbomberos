@@ -4,7 +4,7 @@ require ('php/sesionesbomberos.php');
 ?>
 <?php
 include 'php/conexionbomberos.php';
-$sql = "SELECT * FROM personas WHERE id_tipopersona = '1'";
+$sql = "SELECT * FROM avisos WHERE fechaevento_aviso >= CURRENT_DATE";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,17 +90,17 @@ $sql = "SELECT * FROM personas WHERE id_tipopersona = '1'";
     <section class="container-fluid">
         <h1 align="center">Lista socios
             <button class=" btn btn-primary" type="submit" id="cargar" name="cargar"
-                onclick="location.href='cliente.php'">CARGAR NUEVO</button>
+                onclick="location.href='avisos.php'">CARGAR NUEVO</button>
         </h1>
         <table class="table table-striped bg-light">
             <thead>
                 <tr>
                     <td><strong></strong>ID</td>
-                    <td><strong></strong>NOMBRE</td>
-                    <td><strong></strong>APELLIDO</td>
-                    <td><strong></strong>DOCUMENTO</td>
+                    <td><strong></strong>ASUNTO</td>
+                    <td><strong></strong>MENSJE</td>
                     <td><strong></strong>DIRECCION</td>
-                    <td><strong></strong>TELEFONO</td>
+                    <td><strong></strong>FECHA EMISION</td>
+                    <td><strong></strong>FECHA DEL EVENTO</td>
                     <td align="center"><strong></strong>ACCION</td>
                 </tr>
             </thead>
@@ -117,6 +117,9 @@ while ($row = mysqli_fetch_array($ejecutar)) {
                 <strong><?php echo $row[0]; ?></strong>
                 </td>
                 <td>
+                    <?php echo $row[1]; ?>
+                </td>
+                <td>
                     <?php echo $row[2]; ?>
                 </td>
                 <td>
@@ -128,15 +131,12 @@ while ($row = mysqli_fetch_array($ejecutar)) {
                 <td>
                     <?php echo $row[5]; ?>
                 </td>
-                <td>
-                    <?php echo $row[6]; ?>
-                </td>
                 <td align="center">
                     
                     <button class=" btn btn-secondary" type="submit" id="editar" name="editar"
-                        onclick="location.href='editarcliente.php?cod= <?php echo $row[0]; ?>'">Editar</button>
+                        onclick="location.href='editaraviso.php?cod= <?php echo $row[0]; ?>'">Editar</button>
                     <button class=" btn btn-danger" type="submit" id="borrar" name="borrar"
-                        onclick="location.href='php/eliminarcliente.php?cod= <?php echo $row[0]; ?>'">Borrar</button>
+                        onclick="location.href='php/eliminaraviso.php?cod= <?php echo $row[0]; ?>'">Borrar</button>
                 </td>
             </tr>
             <?php }?>

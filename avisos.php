@@ -14,8 +14,8 @@ require 'php/sesionesbomberos.php';
     <link href="assets/css/bootstrap.css" rel="stylesheet">-->
     <link href="css\bootstrap.min.css" rel="stylesheet">
 
-
-    <!--external css-->
+  
+    <!--ext ernal css-->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <!-- DataTables -->
     <link href="assets/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
@@ -83,30 +83,27 @@ require 'php/sesionesbomberos.php';
 
     <section class="row m-0 bg-white justify-content-center align-items-center vh-100">
         <div class="col-sm-8 bg-white">
-            <h1 class="text-center">Cargar cliente</h1>
+            <h1 class="text-center">Cargar avisos</h1>
             <!--formulario-->
-            <form class="container-fluid center-block bg-white " action="php/cargarcliente.php" method="GET">
+            <form class="container-fluid center-block bg-white " action="php/cargaraviso.php" method="GET">
                 <div class="row">
 
-                    <div class="col-12">
-                        <label>Nombre</label>
-                        <input type="text" class="form-control" name="nombre_cliente" id="nombre_cliente">
+                <div class="col-12">
+                        <label>Asunto</label>
+                        <input type="text" class="form-control" name="asunto_aviso" id="asunto_aviso">
                     </div>
                     <div class="col-12">
-                        <label>Apellido</label>
-                        <input type="text" class="form-control" name="apellido_cliente" id="apellido_cliente">
+                        <label>Mensaje</label>
+                        <input type="text" class="form-control" name="mensaje_aviso" id="mensaje_aviso">
                     </div>
                     <div class="col-12">
-                        <label>Documento</label>
-                        <input type="text" class="form-control" name="documento_cliente" id="documento_cliente">
+                        <label>Direccion</label>
+                        <input type="text" class="form-control" name="direccion_aviso" id="direccion_aviso">
                     </div>
+                    
                     <div class="col-12">
-                        <label>Documento</label>
-                        <input type="text" class="form-control" name="direccion_cliente" id="direccion_cliente">
-                    </div>
-                    <div class="col-12">
-                        <label>Telefono</label>
-                        <input type="text" class="form-control" name="telefono_cliente" id="telefono_cliente">
+                        <label>Fecha del evento</label>
+                        <input type="date" class="form-control" name="fechaevento_aviso" id="fechaevento_aviso">
                     </div>
                 </div>
                 <br>

@@ -5,7 +5,7 @@ require ('php/sesionesbomberos.php');
 <?php
 include('php/conexionbomberos.php');
 
-$sql="SELECT * FROM personas WHERE id_persona=$_GET[cod]";
+$sql="SELECT * FROM avisos WHERE id_aviso =$_GET[cod]";
 $select=mysqli_query($conn,$sql);
 $row=mysqli_fetch_array($select);
 
@@ -14,6 +14,7 @@ $row=mysqli_fetch_array($select);
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MENU PRINCIPAL</title>
@@ -61,7 +62,7 @@ $row=mysqli_fetch_array($select);
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="listadoclciente.php">Cliente <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="listadocliente.php">Cliente <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="listadoproducto.php">Features</a>
@@ -91,38 +92,33 @@ $row=mysqli_fetch_array($select);
 
     <section class="row m-0 bg-white justify-content-center align-items-center vh-100">
         <div class="col-sm-8 bg-white">
-            <h1 class="text-center">Editar cliente</h1>
+            <h1 class="text-center">Editar evento</h1>
             <!--formulario-->
-            <form class="container-fluid center-block bg-white " action="php/modificarcliente.php" method="GET">
+            <form class="container-fluid center-block bg-white " action="php/modificaraviso.php" method="GET">
                 <div class="row">
 
                     <input type="hidden" class="form-control" name="cod" id="cod"
-                        value="<?php echo $row['id_persona'];?>">
+                        value="<?php echo $row[0];?>">
 
                     <div class="col-12">
-                        <label>Nombre</label>
-                        <input type="text" class="form-control" name="nombre_cliente" id="nombre_cliente"
-                            value="<?php echo $row['nombre_persona'];?>">
+                        <label>Asunto</label>
+                        <input type="text" class="form-control" name="asunto_aviso" id="asunto_aviso"
+                            value="<?php echo $row[1];?>">
                     </div>
                     <div class="col-12">
-                        <label>Apellido</label>
-                        <input type="text" class="form-control" name="apellido_cliente" id="apellido_cliente"
-                            value="<?php echo $row['apellido_persona'];?>">
-                    </div>
-                    <div class="col-12">
-                        <label>Documento</label>
-                        <input type="text" class="form-control" name="documento_cliente" id="documento_cliente"
-                            value="<?php echo $row['documento_persona'];?>">
+                        <label>Mensaje</label>
+                        <input type="text"  class="form-control" name="mensaje_aviso" id="mensaje_aviso"
+                            value="<?php echo $row[2];?>" rows="10">
                     </div>
                     <div class="col-12">
                         <label>Direccion</label>
-                        <input type="text" class="form-control" name="direccion_cliente" id="direccion_cliente"
-                            value="<?php  echo $row['direccion_persona'];?>">
+                        <input type="text" class="form-control" name="direccion_aviso" id="direccion_aviso"
+                            value="<?php echo $row[3];?>">
                     </div>
                     <div class="col-12">
-                        <label>Telefono</label>
-                        <input type="text" class="form-control" name="telefono_cliente" id="telefono_cliente"
-                            value="<?php echo $row['telefono_persona'];?>">
+                        <label>Fecha del evento</label>
+                        <input type="date" class="form-control" name="fechaevento_aviso" id="fechaevento_aviso"
+                            value="<?php echo $row[5];?>">
                     </div>
                 </div>
                 <br>
