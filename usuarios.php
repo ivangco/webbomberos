@@ -1,6 +1,6 @@
-<?php 
-require ('php/conexionbomberos.php');
-require ('php/sesionesbomberos.php');
+<?php
+require 'php/conexionbomberos.php';
+require 'php/sesionesbomberos.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,10 +9,11 @@ require ('php/sesionesbomberos.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MENU PRINCIPAL</title>
-    
-    <!-- Bootstrap core CSS 
+
+    <!-- Bootstrap core CSS
     <link href="assets/css/bootstrap.css" rel="stylesheet">-->
     <link href="css\bootstrap.min.css" rel="stylesheet">
+
 
     <!--external css-->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
@@ -34,10 +35,10 @@ require ('php/sesionesbomberos.php');
     <link rel="stylesheet" href="assets/calendario/jquery-ui.css" />
 
     <script src="assets/calendario/jquery-ui.js"></script>
-     <!-- Autocompleto 
+    <!-- Autocompleto
     <script src="assets/script/autocompleto.js"></script>
-    <script type="text/javascript" src="assets/script/script.js"></script>
--->
+    <script type="text/javascript" src="assets/script/script.js"></script>-->
+
     <script type="text/javascript" src="assets/script/validation.min.js"></script>
 
     <!-- Autocompleto -->
@@ -48,28 +49,38 @@ require ('php/sesionesbomberos.php');
 
     <?php include 'uliles\nabvar.php';?>
 
+
     <section class="row m-0 bg-white justify-content-center align-items-center vh-100">
         <div class="col-sm-8 bg-white">
-            <h1 class="text-center">Cargar producto</h1>
+            <h1 class="text-center">Cargar cliente</h1>
             <!--formulario-->
-            <form class="container-fluid center-block bg-white " action="cargarproducto.php" method="GET">
+            <form class="container-fluid center-block bg-white " action="php/cargarcliente.php" method="GET">
                 <div class="row">
 
                     <div class="col-12">
-                        <label>Descripcion</label>
-                        <input type="text" class="form-control" name="descripcion_producto" id="descripcion_producto">
+                        <label>Sociado</label>
+                        <input type="text" class="form-control" name="id_persona" id="id_persona">
                     </div>
                     <div class="col-12">
-                        <label>Precio Compra</label>
-                        <input type="text" class="form-control" name="preciocompra_producto" id="preciocompra_producto">
+                        <label>Tipo Usuario</label>
+                        <select class="form-control" id="id_tipousuario" name="id_tipousuario">
+                            <option>ELIJA UNA OPCION</option>
+                            <option>SOCIO</option>
+                            <option>BOMBERO</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12">
+                        <label>Nombre</label>
+                        <input type="text" class="form-control" name="nombre_usuario" id="nombre_usuario">
                     </div>
                     <div class="col-12">
-                        <label>Precio Venta</label>
-                        <input type="text" class="form-control" name="precioventa_producto" id="precioventa_producto">
+                        <label>Email</label>
+                        <input type="text" class="form-control" name="email_usuario" id="email_usuario">
                     </div>
                     <div class="col-12">
-                        <label>Codigo</label>
-                        <input type="text" class="form-control" name="cod_producto" id="cod_producto">
+                        <label>Contraseña</label>
+                        <input type="text" class="form-control" name="password_usuario" id="password_usuario">
                     </div>
                 </div>
                 <br>

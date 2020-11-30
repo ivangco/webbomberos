@@ -52,45 +52,7 @@ WHERE pedido.id_cliente=clientes.id_cliente;";
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
-        <a class="navbar-brand" href="menu.php">inicio</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="listadocliente.php">Clientes<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="listadoproducto.php">Productos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="FacturarVentas.php">Ventas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="FacturarVentas.php">Informe de ventas</a>
-                </li>
-                
-                <li class="nav-item">
-                    <a class="nav-link " href="pedidos.php">Pedidos</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
+    <?php include 'uliles\nabvar.php';?>
     <br><br>
     <section class="container-fluid">
         <h1 align="center">Lista de pedidos

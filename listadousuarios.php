@@ -4,7 +4,7 @@ require ('php/sesionesbomberos.php');
 ?>
 <?php
 include 'php/conexionbomberos.php';
-$sql = "SELECT * FROM personas WHERE id_tipopersona = '2' AND nombre_persona != 'ADMIN'";
+$sql = "SELECT * FROM usuarios u LEFT JOIN personas P ON P.id_persona= U.id_persona LEFT JOIN tipousuarios TU ON TU.id_tipousuario= U.id_tipousuario WHERE P.id_persona != '1'";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,24 +50,24 @@ $sql = "SELECT * FROM personas WHERE id_tipopersona = '2' AND nombre_persona != 
 
 <body>
 
-    
     <?php include 'uliles\nabvar.php';?>
 
     <br><br>
     <section class="container-fluid">
-        <h1 align="center">Lista bomberos
+        <h1 align="center">Lista socios
             <button class=" btn btn-primary" type="submit" id="cargar" name="cargar"
-                onclick="location.href='bombero.php'">CARGAR NUEVO</button>
+                onclick="location.href='usuarios.php'">CARGAR NUEVO</button>
         </h1>
         <table class="table table-striped bg-light">
             <thead>
                 <tr>
                     <td><strong></strong>ID</td>
-                    <td><strong></strong>NOMBRE</td>
-                    <td><strong></strong>APELLIDO</td>
-                    <td><strong></strong>DOCUMENTO</td>
-                    <td><strong></strong>DIRECCION</td>
-                    <td><strong></strong>TELEFONO</td>
+                    <td><strong></strong>USUARIO</td>
+                    <td><strong></strong>EMAIL</td>
+                    <td><strong></strong>CONTRASEÑA</td>
+                    <td><strong></strong>ESTADO</td>
+                    <td><strong></strong>SOCIADO</td>
+                    <td><strong></strong>TIPO USUARIO</td>
                     <td align="center"><strong></strong>ACCION</td>
                 </tr>
             </thead>
@@ -84,13 +84,7 @@ while ($row = mysqli_fetch_array($ejecutar)) {
                 <strong><?php echo $row[0]; ?></strong>
                 </td>
                 <td>
-                    <?php echo $row[2]; ?>
-                </td>
-                <td>
                     <?php echo $row[3]; ?>
-                </td>
-                <td>
-                    <?php echo $row[4]; ?>
                 </td>
                 <td>
                     <?php echo $row[5]; ?>
@@ -98,12 +92,21 @@ while ($row = mysqli_fetch_array($ejecutar)) {
                 <td>
                     <?php echo $row[6]; ?>
                 </td>
+                <td>
+                    <?php echo $row[4]; ?>
+                </td>
+                <td>
+                    <?php echo  $row[9] . ' ' . $row[10]; ?>
+                </td>
+                <td>
+                    <?php echo  $row[15]; ?>
+                </td>
                 <td align="center">
                     
                     <button class=" btn btn-secondary" type="submit" id="editar" name="editar"
-                        onclick="location.href='editarbombero.php?cod= <?php echo $row[0]; ?>'">Editar</button>
+                        onclick="location.href='editarcliente.php?cod= <?php echo $row[0]; ?>'">Editar</button>
                     <button class=" btn btn-danger" type="submit" id="borrar" name="borrar"
-                        onclick="location.href='php/eliminarbombero.php?cod= <?php echo $row[0]; ?>'">Borrar</button>
+                        onclick="location.href='php/eliminarcliente.php?cod= <?php echo $row[0]; ?>'">Borrar</button>
                 </td>
             </tr>
             <?php }?>
